@@ -1,0 +1,23 @@
+<ng-template #contentPopinDeleteUser let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Delete User</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <div class="modal-body">
+      <p>Are you sure you want to delete User {{deleteUser?.firstname}} {{deleteUser?.lastname}}?</p>
+
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-secondary" data-dismiss="modal" type="button" (click)="modal.dismiss('NO')">No</button>
+    <button (click)="onDeleteUser(deleteUser?.userIdent)" class="btn btn-danger" data-dismiss="modal">Yes</button>
+
+  </div>
+</ng-template>
+
+<a (click)="open(contentPopinDeleteUser,user)" class="btn btn-secondary tooltips" data-original-title="Delete"
+   data-placement="top" data-toggle="modal"><i class="fa fa-times"></i></a>
+
+
+
